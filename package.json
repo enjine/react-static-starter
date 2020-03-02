@@ -1,10 +1,10 @@
 {
   "name": "react-static-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "Barebones React scaffold without using create-react-app. SCSS for styles. Parcel as the bundler.",
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Alessandro Di Candia <alex@engine.net>",
+  "license": "MIT",
   "main": "index.js",
   "dependencies": {
     "minimal-css-reset": "^2.0.0",
@@ -44,6 +44,12 @@
     "build": "parcel build $npm_package_parcel_entrypoints",
     "lint": "eslint ./src/ --fix"
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "postcss": {
     "plugins": {
       "autoprefixer": true,
@@ -52,6 +58,11 @@
   },
   "parcel": {
     "entrypoints": "src/index.html"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "./src/*.{js,jsx,ts,tsx}": [
