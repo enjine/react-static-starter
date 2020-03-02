@@ -1,8 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-function App() {
-  return <h1>Blank</h1>;
-}
+import './scss/main.scss';
+import App from './components/app';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));
