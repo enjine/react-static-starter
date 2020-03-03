@@ -30,12 +30,12 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
     "node-sass": "^4.13.1",
     "parcel-bundler": "^1.12.4",
     "postcss-flexbugs-fixes": "^4.2.0",
     "postcss-preset-env": "^6.7.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
   },
   "scripts": {
     "dev": "parcel $npm_package_parcel_entrypoints -p 3000",
@@ -61,13 +61,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "pretty-quick --staged"
     }
-  },
-  "lint-staged": {
-    "./src/*.{js,jsx,ts,tsx}": [
-      "npx prettier --write",
-      "eslint src/*.js --fix-dry-run"
-    ]
   }
 }
